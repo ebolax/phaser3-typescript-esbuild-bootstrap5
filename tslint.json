@@ -1,0 +1,19 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "no-console": [true, "never"],
+        "quotemark": [true, "double"],
+        "no-var-requires": false
+    },
+    "rulesDirectory": [],
+    "typeRoots": [
+        "./node_modules/phaser/types"
+    ],
+    "types": [
+        "Phaser"
+    ]
+}
