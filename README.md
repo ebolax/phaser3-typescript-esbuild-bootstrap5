@@ -1,6 +1,6 @@
 # Phaser 3 + TypeScript + ESBuild + Bootstrap 5 + LiveReload Template
 
-This repo contains a template to create a game using Phaser 3 + TypeScript with ESBuild bundler and Bootstrap 5 Framework.
+This repo contains a template to create a game using Phaser 3 + TypeScript with ESBuild bundler and Bootstrap 5 Framework. Also have Livereaload feature!
 
 ## Before you need
 

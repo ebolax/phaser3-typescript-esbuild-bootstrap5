@@ -15,7 +15,9 @@
         "phaser",
         "phaser 3",
         "bootstrap",
+		"bootstrap 5",
         "game",
+		"livereload",
         "typescript"
     ],
     "author": "ebolax",
