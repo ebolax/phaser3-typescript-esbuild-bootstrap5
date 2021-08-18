@@ -14,7 +14,7 @@ export default {
 	},
     plugins: {
         global: [{
-            key: 'rexVirtualJoystick',
+            key: "rexVirtualJoystick",
             plugin: VirtualJoystickPlugin,
             start: true
         }]

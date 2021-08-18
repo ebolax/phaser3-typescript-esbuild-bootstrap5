@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import VirtualJoystick from 'phaser3-rex-plugins/plugins/virtualjoystick.js';
+import VirtualJoystick from "phaser3-rex-plugins/plugins/virtualjoystick.js";
 
 export default class GameScene extends Phaser.Scene
 {
