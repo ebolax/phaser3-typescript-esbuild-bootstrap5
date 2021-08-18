@@ -3,17 +3,17 @@ import VirtualJoystick from 'phaser3-rex-plugins/plugins/virtualjoystick.js';
 
 export default class GameScene extends Phaser.Scene
 {
-    width: number = 0;
-    height: number = 0
-    centerx: number = 0;
-    centery: number = 0;
+    width = 0;
+    height = 0
+    centerx = 0;
+    centery = 0;
 
     constructor()
     {
         super("GameScene");
     }
 
-    preload()
+    preload(): void
     {
         this.width = this.cameras.main.width;
         this.height = this.cameras.main.height;
@@ -27,10 +27,10 @@ export default class GameScene extends Phaser.Scene
         this.load.image("logo", "images/phaser3-logo.png");
     }
 
-    create()
+    create(): void
     {
         // create joystick from rex plugins
-        var joystick = new VirtualJoystick(this,
+        const joystick = new VirtualJoystick(this,
         {
             x: this.centerx,
             y: this.height - 120,
