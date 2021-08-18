@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import VirtualJoystick from 'phaser3-rex-plugins/plugins/virtualjoystick.js';
 
 export default class GameScene extends Phaser.Scene
 {
@@ -28,12 +29,23 @@ export default class GameScene extends Phaser.Scene
 
     create()
     {
-        const logo = this.add.image(this.centerx, this.centery, "logo").setOrigin(0.5);
+        // create joystick from rex plugins
+        var joystick = new VirtualJoystick(this,
+        {
+            x: this.centerx,
+            y: this.height - 120,
+            radius: 100
+        });
+        joystick.enable = true;
+
+        // create logo image
+        const logo = this.add.image(this.centerx, this.centery - 100, "logo").setOrigin(0.5);
         if (this.width < logo.width) logo.setScale(0.5); // mobile scale
 
+        // tween logo image
         this.tweens.add({
             targets: logo,
-            y: {from: logo.y - 100, to: logo.y + 100},
+            y: {from: logo.y - 50, to: logo.y + 50},
             duration: 1500,
             ease: "Sine.inOut",
             yoyo: true,

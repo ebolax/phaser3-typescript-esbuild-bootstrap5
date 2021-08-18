@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import GameScene from "./scenes/Game";
+import VirtualJoystickPlugin from "phaser3-rex-plugins/plugins/virtualjoystick-plugin.js";
 
 export default {
     type: Phaser.AUTO,
@@ -11,5 +12,12 @@ export default {
 		width: "100%",
 		height: "100%"
 	},
+    plugins: {
+        global: [{
+            key: 'rexVirtualJoystick',
+            plugin: VirtualJoystickPlugin,
+            start: true
+        }]
+    },
     scene: GameScene
 };
