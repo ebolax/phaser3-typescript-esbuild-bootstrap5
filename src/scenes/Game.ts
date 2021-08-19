@@ -45,7 +45,7 @@ export default class GameScene extends Phaser.Scene
         // tween logo image
         this.tweens.add({
             targets: logo,
-            y: {from: logo.y - 50, to: logo.y + 50},
+            y: { from: logo.y - 50, to: logo.y + 50 },
             duration: 1500,
             ease: "Sine.inOut",
             yoyo: true,
