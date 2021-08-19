@@ -31,11 +31,11 @@ export default class GameScene extends Phaser.Scene
     {
         // create joystick from rex plugins
         const joystick = new VirtualJoystick(this,
-        {
-            x: this.centerx,
-            y: this.height - 120,
-            radius: 100
-        });
+            {
+                x: this.centerx,
+                y: this.height - 120,
+                radius: 100
+            });
         joystick.enable = true;
 
         // create logo image
