@@ -9,6 +9,8 @@ This repo contains a template to create a game using Phaser 3 + TypeScript with 
 
 A good code editor is also recommended and this repo is designed around [Visual Studio Code](https://code.visualstudio.com/)
 
+I'm using ESLint for VS Code. If you don't want use ESlint rules, just delete `.eslintrc.json`. You can change rules whatever you want.
+
 ## **Installation**
 
 Note that if you have cloned this template repo via GitHub, then you'll need to change the URLs below to match _your_ repo's name:
