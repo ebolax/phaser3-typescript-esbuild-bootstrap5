@@ -1,5 +1,7 @@
 import Phaser from "phaser";
+import IntroScene from "./scenes/Intro";
 import GameScene from "./scenes/Game";
+import EndScene from "./scenes/End";
 import VirtualJoystickPlugin from "phaser3-rex-plugins/plugins/virtualjoystick-plugin.js";
 
 export default {
@@ -19,5 +21,9 @@ export default {
             start: true
         }]
     },
-    scene: GameScene
+    scene: [IntroScene, GameScene, EndScene]
 };
+
+export type GameData = {
+    score: number
+}

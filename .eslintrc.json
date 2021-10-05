@@ -60,7 +60,7 @@
         "nonblock-statement-body-position": 1,
         "no-else-return": 2,
         "spaced-comment": 1,
-        "indent": [1, 4],
+        "indent": "off",
         "keyword-spacing": 1,
         "space-infix-ops": 1,
         "eol-last": ["error", "never"],

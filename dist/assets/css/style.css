@@ -34,7 +34,6 @@ body
 	left: 50%;
 	top: 50%;
 	transform: translateX(-50%) translateY(-50%);
-	cursor: pointer;
 	border: 1px solid #303030;
 }
 #game

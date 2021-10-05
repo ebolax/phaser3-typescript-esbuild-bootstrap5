@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { GameData } from "../config";
 import VirtualJoystick from "phaser3-rex-plugins/plugins/virtualjoystick.js";
 
 export default class GameScene extends Phaser.Scene
@@ -7,6 +8,9 @@ export default class GameScene extends Phaser.Scene
     height = 0
     centerx = 0;
     centery = 0;
+    gamedata: GameData = {
+        score: 0
+    }
 
     constructor()
     {
@@ -24,7 +28,7 @@ export default class GameScene extends Phaser.Scene
         this.load.path = "assets/";
 
         // load assets
-        this.load.image("logo", "images/phaser3-logo.png");
+        this.load.image("endbtn", "images/endbtn.png");
     }
 
     create(): void
@@ -38,18 +42,16 @@ export default class GameScene extends Phaser.Scene
             });
         joystick.enable = true;
 
-        // create logo image
-        const logo = this.add.image(this.centerx, this.centery - 100, "logo").setOrigin(0.5);
-        if (this.width < logo.width) logo.setScale(0.5); // mobile scale
+        // create end button and go to scene on mouse up
+        const btn_end = this.add.image(this.centerx, this.centery - 200, "endbtn");
+        btn_end.setInteractive({
+            useHandCursor: true
+        });
+        btn_end.on("pointerup", () =>
+        {
+            this.gamedata.score = 100;
 
-        // tween logo image
-        this.tweens.add({
-            targets: logo,
-            y: { from: logo.y - 50, to: logo.y + 50 },
-            duration: 1500,
-            ease: "Sine.inOut",
-            yoyo: true,
-            repeat: -1
+            this.scene.start("EndScene", this.gamedata); // name from config.ts
         });
     }
 }
