@@ -8,7 +8,8 @@
         "watch": "esbuild src/index.ts --outfile=dist/index.js --bundle --watch",
         "serve": "serve dist -p 8000",
         "livereload": "livereload dist/",
-        "dev": "concurrently \"npm run watch\" \"npm run serve\" \"npm run livereload\""
+        "dev": "concurrently \"npm run watch\" \"npm run serve\" \"npm run livereload\"",
+        "eslint": "eslint ."
     },
     "keywords": [
         "esbuild",
