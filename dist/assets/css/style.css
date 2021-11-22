@@ -1,47 +1,42 @@
-body
-{
+body {
     padding: 0px;
     margin: 0px;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
-	font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
     background-color: #000000;
-	color: #ffffff;
+    color: #ffffff;
     width: 100%;
     height: 100%;
 }
 
-.main
-{
-	color: #FFFFFF;
+.main {
+    color: #ffffff;
 }
 
-.gamecontainer
-{
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	background-color: rgba(0, 0, 0, 0.8);
-	z-index: 1000;
+.gamecontainer {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
 }
-.gamecontainer .container
-{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	max-width: 600px;
-	max-height: 600px;
-	left: 50%;
-	top: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	border: 1px solid #303030;
+.gamecontainer .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 1px solid #303030;
 }
-#game
-{
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
+#game {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }

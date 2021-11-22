@@ -15,15 +15,17 @@ export default {
         height: "100%"
     },
     plugins: {
-        global: [{
-            key: "rexVirtualJoystick",
-            plugin: VirtualJoystickPlugin,
-            start: true
-        }]
+        global: [
+            {
+                key: "rexVirtualJoystick",
+                plugin: VirtualJoystickPlugin,
+                start: true
+            }
+        ]
     },
     scene: [IntroScene, GameScene, EndScene]
 };
 
 export type GameData = {
-    score: number
-}
+    score: number;
+};

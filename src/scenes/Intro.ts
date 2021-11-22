@@ -1,22 +1,19 @@
 import Phaser from "phaser";
 
-export default class GameScene extends Phaser.Scene
-{
+export default class GameScene extends Phaser.Scene {
     width = 0;
-    height = 0
+    height = 0;
     centerx = 0;
     centery = 0;
     gamedata = {
         score: 0
     };
 
-    constructor()
-    {
+    constructor() {
         super("IntroScene");
     }
 
-    preload(): void
-    {
+    preload(): void {
         this.width = this.cameras.main.width;
         this.height = this.cameras.main.height;
         this.centerx = this.width / 2;
@@ -58,21 +55,23 @@ export default class GameScene extends Phaser.Scene
         });
         assetText.setOrigin(0.5);
 
-        this.load.on("progress", (value: number) =>
-        {
+        this.load.on("progress", (value: number) => {
             percentText.setText(Math.round(value * 100) + "%");
             progressBar.clear();
             progressBar.fillStyle(0xffffff, 1);
-            progressBar.fillRect(this.centerx - 90, this.centery - 20 + 5, 180 * value, 30);
+            progressBar.fillRect(
+                this.centerx - 90,
+                this.centery - 20 + 5,
+                180 * value,
+                30
+            );
         });
 
-        this.load.on("fileprogress", (file: Phaser.Loader.File) =>
-        {
+        this.load.on("fileprogress", (file: Phaser.Loader.File) => {
             assetText.setText("Loading asset: " + file.key);
         });
 
-        this.load.on("complete", () =>
-        {
+        this.load.on("complete", () => {
             progressBar.destroy();
             progressBox.destroy();
             loadingText.destroy();
@@ -88,10 +87,11 @@ export default class GameScene extends Phaser.Scene
         this.load.image("startbtn", "images/startbtn.png");
     }
 
-    create(): void
-    {
+    create(): void {
         // create logo image
-        const logo = this.add.image(this.centerx, this.centery - 100, "logo").setOrigin(0.5);
+        const logo = this.add
+            .image(this.centerx, this.centery - 100, "logo")
+            .setOrigin(0.5);
         if (this.width < logo.width) logo.setScale(0.5); // mobile scale
 
         // tween logo image
@@ -105,12 +105,15 @@ export default class GameScene extends Phaser.Scene
         });
 
         // create start button and go to scene on mouse up
-        const btn_start = this.add.image(this.centerx, this.centery + 200, "startbtn");
+        const btn_start = this.add.image(
+            this.centerx,
+            this.centery + 200,
+            "startbtn"
+        );
         btn_start.setInteractive({
             useHandCursor: true
         });
-        btn_start.on("pointerup", () =>
-        {
+        btn_start.on("pointerup", () => {
             this.scene.start("GameScene"); // name from config.ts
         });
     }
