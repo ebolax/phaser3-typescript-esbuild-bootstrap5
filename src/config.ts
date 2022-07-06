@@ -9,10 +9,12 @@ export default {
     backgroundColor: "#000000",
     scale: {
         parent: "game", // #game
-        mode: Phaser.Scale.RESIZE,
+        mode: Phaser.Scale.ScaleModes.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
-        width: "100%",
-        height: "100%"
+        width: 1920,
+        height: 1080,
+        resizeInterval: 250,
+        fullscreenTarget: "gamecontainer"
     },
     plugins: {
         global: [

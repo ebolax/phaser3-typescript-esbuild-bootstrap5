@@ -25,7 +25,8 @@ export default class GameScene extends Phaser.Scene {
         this.load.path = "assets/";
 
         // load assets
-        this.load.image("endbtn", "images/endbtn.png");
+        this.load.image("end_btn", "images/endbtn.png");
+        this.load.image("fullscreen_btn", "images/fullscreen.png");
     }
 
     create(): void {
@@ -41,7 +42,7 @@ export default class GameScene extends Phaser.Scene {
         const btn_end = this.add.image(
             this.centerx,
             this.centery - 200,
-            "endbtn"
+            "end_btn"
         );
         btn_end.setInteractive({
             useHandCursor: true
@@ -50,6 +51,18 @@ export default class GameScene extends Phaser.Scene {
             this.gamedata.score = 100;
 
             this.scene.start("EndScene", this.gamedata); // name from config.ts
+        });
+
+        const fullscreen_btn = this.add.image(this.width - 20, 25, "fullscreen_btn").setOrigin(1, 0);
+        fullscreen_btn.setInteractive({ useHandCursor: true });
+        fullscreen_btn.on("pointerover", () => {
+            fullscreen_btn.setTint(0xacacac);
+        });
+        fullscreen_btn.on("pointerout", () => {
+            fullscreen_btn.clearTint();
+        });
+        fullscreen_btn.on("pointerup", () => {
+            this.scale.toggleFullscreen();
         });
     }
 }
